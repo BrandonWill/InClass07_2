@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.brandon.myapplication.MainActivity">
+    <item android:title="Show All"
+        android:id="@+id/menuItemShowAll"
+        android:orderInCategory="0"
+        app:showAsAction="never" />
+    <item android:title="Show Completed"
+        android:id="@+id/menuItemShowCompleted"
+        android:orderInCategory="1"
+        app:showAsAction="never" />
+    <item android:title="Show Pending"
+        android:id="@+id/menuItemShowPending"
+        android:orderInCategory="2"
+        app:showAsAction="never" />
+    <item android:title="Sort by Time"
+        android:id="@+id/menuItemSortByTime"
+        android:orderInCategory="3"
+        app:showAsAction="never" />
+    <item android:title="Sort by Priority"
+        android:id="@+id/menuItemSortByPriority"
+        android:orderInCategory="4"
+        app:showAsAction="never" />
+</menu>
