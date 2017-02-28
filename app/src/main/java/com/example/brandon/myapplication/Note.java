@@ -5,6 +5,7 @@ package com.example.brandon.myapplication;
  */
 
 public class Note {
+    private long _id;
     private String text;
     private String priority;
     private long time;
@@ -19,6 +20,33 @@ public class Note {
         return note;
     }
 
+    public Note(String text, String priority) {
+        this.text = text;
+        this.priority = priority;
+        this.time = System.currentTimeMillis();
+        this.completed = false;
+    }
+
+    @Override
+    public String toString() {
+        return "Note{" +
+                "_id=" + _id +
+                ", text='" + text + '\'' +
+                ", priority='" + priority + '\'' +
+                ", time=" + time +
+                ", completed=" + completed +
+                '}';
+    }
+
+    public Note() {}
+
+    public long get_id() {
+        return _id;
+    }
+
+    public void set_id(long _id) {
+        this._id = _id;
+    }
 
     public boolean isCompleted() {
         return completed;

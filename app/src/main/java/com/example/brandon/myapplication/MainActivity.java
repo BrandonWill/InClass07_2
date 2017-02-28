@@ -5,11 +5,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+    DatabaseDataManager dm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        dm = new DatabaseDataManager(this);
+
+        dm.saveNote(new Note("Note 1", "High"));
+        dm.saveNote(new Note("Note 2", "Medium"));
+        dm.saveNote(new Note("Note 3", "Low"));
+
+        List<Note> notes = dm.getAllNotes();
+
+        Log.d("Demo", notes.toString());
     }
 
     @Override

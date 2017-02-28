@@ -14,14 +14,16 @@ public class NotesTable {
     static final String COLUMN_TEXT = "text";
     static final String COLUMN_PRIORITY = "priority";
     static final String COLUMN_COMPLETED = "completed";
-    static final String COLUMN_SUBJECT = "subject";
+    static final String COLUMN_TIME = "time";
 
     static public void onCreate(SQLiteDatabase db) {
         StringBuilder sb = new StringBuilder();
         sb.append("CREATE TABLE " + TABLE_NAME + "(");
         sb.append(COLUMN_ID + " integer primary key autoincrement, " );
-        sb.append(COLUMN_SUBJECT + " text not null, ");
-        sb.append(COLUMN_TEXT + " text not null);");
+        sb.append(COLUMN_TEXT + " text not null, ");
+        sb.append(COLUMN_PRIORITY + " text not null, ");
+        sb.append(COLUMN_COMPLETED + " text not null, ");
+        sb.append(COLUMN_TIME + " text not null);");
 
         try {
             db.execSQL(sb.toString());
